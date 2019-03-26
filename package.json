@@ -2,18 +2,20 @@
   "name": "filkate-gendiff",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/gendiff.js",
+  "main": "gendiff.js",
   "bin": {
-    "gendiff": "dist/bin/gendiff.js"
+    "hexlet": "dist/bin/hexlet.js"
+  },
+  "engines": {
+    "node": ">=8"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "babel-node": "babel-node",
+    "test": "jest",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublish": "npm run build",
-    "eslint": "eslint"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,19 +26,25 @@
   "bugs": {
     "url": "https://github.com/filkate/project-lvl2-s455/issues"
   },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "homepage": "https://github.com/filkate/project-lvl2-s455#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.2",
     "babel-eslint": "^10.0.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1",
+    "babel-jest": "^24.5.0",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jest": "^22.4.1",
-    "eslint-plugin-lodash-fp": "^2.2.0-a1"
+    "eslint-plugin-lodash-fp": "^2.2.0-a1",
+    "jest": "^24.5.0",
+    "jest-cli": "^24.5.0"
   },
   "dependencies": {
     "commander": "^2.19.0"
