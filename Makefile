@@ -11,12 +11,10 @@ build:
 	npm run build
 
 test:
-	npx jest --watch
+	npm test
 
 lint:
 	npx eslint .
 
 publish:
 	npm publish
-
-.PHONY: test
