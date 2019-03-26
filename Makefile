@@ -14,7 +14,7 @@ test:
 	npm test
 
 lint:
-	npx eslint .
+	npm run eslint src/**
 
 publish:
 	npm publish

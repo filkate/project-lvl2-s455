@@ -1,3 +1,3 @@
-const genDiff = (oldConfig, newConfig) => '';
+const genDiff = () => '';
 
 export default genDiff;
