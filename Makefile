@@ -1,7 +1,8 @@
-install: install-deps
+install: 
+	install-deps
 
 run:
-	npx babel-node 'src/bin/gendiff.js'
+	npx babel-node 'src/bin/gendiff.js' 
 
 install-deps:
 	npm install
@@ -14,7 +15,10 @@ test:
 	npm test
 
 lint:
-	npm run eslint
+	npx eslint .
 
 publish:
 	npm publish
+
+test-coverage:
+	npm test -- --coverage
