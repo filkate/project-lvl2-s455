@@ -7,3 +7,6 @@ https://asciinema.org/a/hCreOpD7JAd4wYjJsToqAJ0G8
 
 step 2 asciinema:
 https://asciinema.org/a/uz60iH4ra3C0enRGQgGJJ3jqu
+
+step 3:
+https://asciinema.org/a/wLGrdft4pbVrL3hFeDzHcmn2N

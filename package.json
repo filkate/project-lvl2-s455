@@ -1,6 +1,6 @@
 {
   "name": "filkate-gendiff",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "dist/index.js",
   "bin": {
@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "commander": "^2.19.0",
+    "js-yaml": "^3.13.0",
     "lodash": "^4.17.11"
   }
 }
