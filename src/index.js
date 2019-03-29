@@ -25,7 +25,7 @@ const process = (before, after) => {
   return render(result);
 };
 
-const getContent = pathToFile => fs.readFileSync(path.normalize(path.resolve(pathToFile)));
+const getContent = pathToFile => fs.readFileSync(path.resolve(path.normalize(pathToFile)), 'utf-8');
 const getExtension = pathToFile => path.extname(pathToFile).substr(1);
 
 const genDiff = (pathToFile1, pathToFile2) => {
