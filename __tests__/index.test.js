@@ -11,7 +11,9 @@ describe('gendiff tests', () => {
   const pathToYml2 = './__tests__/__fixtures__/after.yml';
   const pathToNestedYml2 = './__tests__/__fixtures__/after_nested.yml';
   const pathToIni1 = './__tests__/__fixtures__/before.ini';
+  const pathToNestedIni1 = './__tests__/__fixtures__/before_nested.ini';
   const pathToIni2 = './__tests__/__fixtures__/after.ini';
+  const pathToNestedIni2 = './__tests__/__fixtures__/after_nested.ini';
   const pathToExpected = './__tests__/__fixtures__/expected';
   const pathToNestedExpected = './__tests__/__fixtures__/nested_expected';
 
@@ -21,6 +23,7 @@ describe('gendiff tests', () => {
     [pathToIni1, pathToIni2, pathToExpected],
     [pathToNestedJson1, pathToNestedJson2, pathToNestedExpected],
     [pathToNestedYml1, pathToNestedYml2, pathToNestedExpected],
+    [pathToNestedIni1, pathToNestedIni2, pathToNestedExpected],
   ])(
     '.gendDiff(%s, %s)',
     (path1, path2, path3) => {

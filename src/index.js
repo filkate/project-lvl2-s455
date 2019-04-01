@@ -3,7 +3,7 @@ import path from 'path';
 import union from 'lodash/union';
 import has from 'lodash/has';
 import parse from './parsers';
-import render from './render';
+import render from './renders';
 
 const makeAst = (before, after) => {
   const propertyActions = [
@@ -45,14 +45,14 @@ const makeAst = (before, after) => {
 const getContent = pathToFile => fs.readFileSync(path.resolve(path.normalize(pathToFile)), 'utf-8');
 const getFormat = pathToFile => path.extname(pathToFile).substr(1);
 
-const genDiff = (pathToFile1, pathToFile2) => {
+const genDiff = (pathToFile1, pathToFile2, outputFormat = 'default') => {
   const oldContent = getContent(pathToFile1);
   const newContent = getContent(pathToFile2);
   const format = getFormat(pathToFile1);
   const parsedOldContent = parse(format)(oldContent);
   const parsedNewContent = parse(format)(newContent);
   const ast = makeAst(parsedOldContent, parsedNewContent);
-  return render(ast);
+  return render(outputFormat)(ast);
 };
 
 export default genDiff;
