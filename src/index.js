@@ -52,7 +52,7 @@ const genDiff = (pathToFile1, pathToFile2) => {
   const parsedOldContent = parse(format)(oldContent);
   const parsedNewContent = parse(format)(newContent);
   const ast = makeAst(parsedOldContent, parsedNewContent);
-  return render(ast, 1);
+  return render(ast);
 };
 
 export default genDiff;
