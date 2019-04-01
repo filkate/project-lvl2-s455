@@ -2,8 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import union from 'lodash/union';
 import has from 'lodash/has';
-import parse from './parsers';
-import render from './renders';
+import preprocess from './parsers';
+import render from './renderers';
 
 const makeAst = (before, after) => {
   const propertyActions = [
@@ -46,12 +46,12 @@ const getContent = pathToFile => fs.readFileSync(path.resolve(path.normalize(pat
 const getFormat = pathToFile => path.extname(pathToFile).substr(1);
 
 const genDiff = (pathToFile1, pathToFile2, outputFormat = 'default') => {
-  const oldContent = getContent(pathToFile1);
-  const newContent = getContent(pathToFile2);
+  const data1 = getContent(pathToFile1);
+  const data2 = getContent(pathToFile2);
   const format = getFormat(pathToFile1);
-  const parsedOldContent = parse(format)(oldContent);
-  const parsedNewContent = parse(format)(newContent);
-  const ast = makeAst(parsedOldContent, parsedNewContent);
+  const preparedData1 = preprocess(format)(data1);
+  const preparedData2 = preprocess(format)(data2);
+  const ast = makeAst(preparedData1, preparedData2);
   return render(outputFormat)(ast);
 };
 
